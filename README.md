@@ -39,7 +39,9 @@ La línea que representa al eje Z aparece a mayor altura, debido a la fuerza de 
 **Fuerzas detectadas por la IMU**  
 ![IMU](data/plot_aceleracion.png)
 
+
+### Coste del mecanismo
 No puedo añadir una imagen del robot cogiendo la caja o de la gráfica que muestre el gasto pracial en el tiempo dado que no he logrado que el robot ejecute las trayectorias una vez planificadas.
 
-
+### Rosbag del proceso
 [Rosbag de la ejecución de la práctica](https://urjc-my.sharepoint.com/:f:/g/personal/d_lopezm_2022_alumnos_urjc_es/ErMHlDa3HJNNtZf15pczcjMBOtxUywlsjJ3Jw8LkqS-MvA?e=a9YT0R)
