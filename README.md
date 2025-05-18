@@ -13,3 +13,5 @@ Imagen del modelo del robot:
 
 Imagen de las tf del robot:
 ![rover_tf](data/rover_tfs.png)
+
+## Parte B
