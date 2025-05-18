@@ -1,0 +1,9 @@
+# Default initial positions for robot's ros2_control fake system
+
+initial_positions:
+  Base_pinza_link_joint: 0
+  Brazo_L3_link_joint: 0
+  Dedo_der_link_joint: 0
+  Dedo_iz_link_joint: 0
+  Union_base_L1_link_joint: 0
+  Union_eje_L2_link_joint: 0

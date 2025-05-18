@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+
+  <link name="base_footprint">
+      <origin rpy="0 0.00000 0" xyz="0.00000 0.00000 0.00000"/>
+  </link>
+
+  <xacro:include filename="$(find rover_description)/urdf/wheels/rover_wheel.urdf.xacro"/>
+  <xacro:include filename="$(find rover_description)/urdf/base/base.urdf.xacro"/>
+  <xacro:include filename="$(find rover_description)/urdf/arm/arm.urdf.xacro"/>
+  <xacro:include filename="$(find rover_description)/urdf/arm/gripper.urdf.xacro"/>
+  <xacro:include filename="$(find rover_description)/urdf/sensors/imu.urdf.xacro"/>
+  <xacro:include filename="$(find rover_description)/urdf/sensors/camera.urdf.xacro"/>
+
+  <xacro:base parent="base_footprint"/>
+  <xacro:arm parent="Base_link"/>
+  <xacro:gripper parent="Brazo_L3_link"/>
+
+  <!-- Wheels -->
+  <xacro:wheel r="0.0000" p="1.57080" w="0.00000" x="0.15000" y="0.00000" z="0.00000" name="Rueda_cen_der_link" parent="Union_eje_cen_der_link"/>
+  <xacro:wheel r="-3.1416" p="1.57080" w="0.00000" x="-0.15000" y="0.00000" z="0.00000" name="Rueda_cen_iz_link" parent="Union_eje_cen_iz_link"/>
+  <xacro:wheel r="-1.57080" p="0.61087" w="-1.57080" x="0.20000" y="-0.00404" z="-0.43010" name="Rueda_del_der_link" parent="Eje_del_der_link"/>
+  <xacro:wheel r="1.57080" p="0.61087" w="-1.57080" x="-0.20000" y="-0.00404" z="-0.43010" name="Rueda_del_iz_link" parent="Eje_del_iz_link"/>
+  <xacro:wheel r="1.57080" p="0.61087" w="1.57080" x="0.20000" y="0.00404" z="-0.43010" name="Rueda_tras_der_link" parent="Eje_tras_der_link"/>
+  <xacro:wheel r="-1.57080" p="0.61087" w="1.57080" x="-0.20000" y="0.00404" z="-0.43010" name="Rueda_tras_iz_link" parent="Eje_tra_iz_link"/>
+
+  <!-- Sensors -->
+  <xacro:IMU r="0" p="0" y="1.57080" parent="Base_link"/>
+  <xacro:camera r="0" p="0" w="1.57080" x="0.00000" y="0.75000" z="0.30000" name="main_camera_link" parent="Base_link"/>
+  <xacro:camera r="0" p="-1.57080" w="1.57080" x="0.00000" y="0.00000" z="0.050000" name="gripper_camera_link" parent="Base_pinza_link"/>
+
+  <!-- Gazebo ROS Control plugins-->
+  <xacro:include filename="$(find rover_description)/urdf/ros2_control.urdf.xacro"/>
+  <xacro:arg name="config_controllers" default="$(find rover_description)/config/rover_controllers.yaml"/>
+  <xacro:arg name="update_rate" default="20"/>
+  <xacro:ros2_control/>
+</robot>

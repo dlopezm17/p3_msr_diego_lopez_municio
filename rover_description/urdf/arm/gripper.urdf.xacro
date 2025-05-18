@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<robot name="robot" xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="gripper" params="parent">
+    <joint name="Base_pinza_link_joint" type="continuous">
+      <limit effort="50.0" velocity="1.5"/>
+      <origin rpy="3.1416 0.00000 -1.57080" xyz="0.00000 0.00000 -1.00000"/>
+      <parent link="${parent}"/>
+      <child link="Base_pinza_link"/>
+      <axis xyz="0.00000 0.00000 1.00000"/>
+    </joint>
+    <joint name="Dedo_der_link_joint" type="prismatic">
+      <limit lower="0.00000" upper="0.45000" effort="50.0" velocity="1.5"/>
+      <origin rpy="0.00000 0.00000 3.1416" xyz="0.57500 0.00000 0.17500"/>
+      <parent link="Base_pinza_link"/>
+      <child link="Dedo_der_link"/>
+      <axis xyz="1.00000 0.00000 0.00000"/>
+    </joint>
+    <joint name="Dedo_iz_link_joint" type="prismatic">
+      <limit lower="0.00000" upper="0.45000" effort="50.0" velocity="1.5"/>
+      <origin rpy="0.00000 0.00000 0.00000" xyz="-0.57500 0.00000 0.17500"/>
+      <parent link="Base_pinza_link"/>
+      <child link="Dedo_iz_link"/>
+      <axis xyz="1.00000 0.00000 0.00000"/>
+    </joint>
+    <link name="Base_pinza_link">
+      <collision name="Base_pinza_collision">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <geometry>
+          <box size="1.25000 0.40000 0.10000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="0.01417" ixy="0.00000" ixz="0.00000" iyy="0.04771" iyz="0.00000" izz="0.06021"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <mass value="1.00000"/>
+      </inertial>
+      <visual name="Base_pinza">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <material name="ligth_green"/>
+        <geometry>
+          <box size="1.25000 0.40000 0.10000"/>
+        </geometry>
+      </visual>
+    </link>
+    <link name="Dedo_der_link">
+      <collision name="Dedo_der_collision">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+        <geometry>
+          <box size="0.10000 0.40000 0.25000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="0.00927" ixy="0.00000" ixz="0.00000" iyy="0.00302" iyz="0.00000" izz="0.00708"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <mass value="0.50000"/>
+      </inertial>
+      <visual name="Dedo_der">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <material name="ligth_green"/>
+        <geometry>
+          <box size="0.10000 0.40000 0.25000"/>
+        </geometry>
+      </visual>
+    </link>
+    <link name="Dedo_iz_link">
+      <collision name="Dedo_iz_collision">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <geometry>
+          <box size="0.10000 0.40000 0.25000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="0.00927" ixy="0.00000" ixz="0.00000" iyy="0.00302" iyz="0.00000" izz="0.00708"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <mass value="0.50000"/>
+      </inertial>
+      <visual name="Dedo_iz">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <material name="ligth_green"/>
+        <geometry>
+          <box size="0.10000 0.40000 0.25000"/>
+        </geometry>
+      </visual>
+    </link>
+  </xacro:macro>
+
+  <material name="ligth_green">
+    <color rgba="0.00000 0.66275 0.42353 1.00000"/>
+  </material> 
+</robot>

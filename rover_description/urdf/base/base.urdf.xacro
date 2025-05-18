@@ -1,0 +1,336 @@
+<?xml version="1.0"?>
+<robot name="robot" xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <xacro:macro name="base" params="parent">
+    <joint name="Eje_cen_der_link_joint" type="fixed">
+        <origin rpy="0.00000 -0.95993 0.00000" xyz="0.50000 -0.65000 -0.60000"/>
+        <parent link="Base_link"/>
+        <child link="Eje_cen_der_link"/>
+    </joint>
+    <joint name="Eje_cen_iz_link_joint" type="fixed">
+        <origin rpy="0.00000 0.95993 0.00000" xyz="-0.50000 -0.65000 -0.60000"/>
+        <parent link="Base_link"/>
+        <child link="Eje_cen_iz_link"/>
+    </joint>
+    <joint name="Eje_del_der_link_joint" type="fixed">
+        <origin rpy="0.95993 0.00000 0.00000" xyz="0.65000 0.65000 -0.50000"/>
+        <parent link="Base_link"/>
+        <child link="Eje_del_der_link"/>
+    </joint>
+    <joint name="Eje_del_iz_link_joint" type="fixed">
+        <origin rpy="0.95993 0.00000 0.00000" xyz="-0.65000 0.65000 -0.50000"/>
+        <parent link="Base_link"/>
+        <child link="Eje_del_iz_link"/>
+    </joint>
+    <joint name="Eje_tra_iz_link_joint" type="fixed">
+        <origin rpy="-0.95993 0.00000 0.00000" xyz="-0.15000 -0.45000 -0.55000"/>
+        <parent link="Pared_iz_link"/>
+        <child link="Eje_tra_iz_link"/>
+    </joint>
+    <joint name="Eje_tras_der_link_joint" type="fixed">
+        <origin rpy="-0.95993 0.00000 0.00000" xyz="0.15000 -0.45000 -0.55000"/>
+        <parent link="Pared_der_link"/>
+        <child link="Eje_tras_der_link"/>
+    </joint>
+    <joint name="Pared_der_link_joint" type="fixed">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.50000 -1.30000 0.05000"/>
+        <parent link="Base_link"/>
+        <child link="Pared_der_link"/>
+    </joint>
+    <joint name="Pared_inf_link_joint" type="fixed">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -1.30000 -0.45000"/>
+        <parent link="Base_link"/>
+        <child link="Pared_inf_link"/>
+    </joint>
+    <joint name="Pared_iz_link_joint" type="fixed">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="-0.50000 -1.30000 0.05000"/>
+        <parent link="Base_link"/>
+        <child link="Pared_iz_link"/>
+    </joint>
+    <joint name="Pared_tras_link_joint" type="fixed">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.50000 0.50000"/>
+        <parent link="Pared_inf_link"/>
+        <child link="Pared_tras_link"/>
+    </joint>
+    <joint name="Base_link_joint" type="fixed">
+        <origin rpy="0.00000 0.00000 -1.5708" xyz="0.00000 0 1"/>
+        <parent link="${parent}"/>
+        <child link="Base_link"/>
+    </joint>
+    <joint name="Union_eje_cen_der_link_joint" type="fixed">
+      <origin rpy="0.00000 0.95993 0.00000" xyz="0.07788 -0.00000 -0.37274"/>
+      <parent link="Eje_cen_der_link"/>
+      <child link="Union_eje_cen_der_link"/>
+    </joint>
+    <joint name="Union_eje_cen_iz_link_joint" type="fixed">
+      <origin rpy="0.00000 -0.95993 0.00000" xyz="-0.07788 -0.00000 -0.37274"/>
+      <parent link="Eje_cen_iz_link"/>
+      <child link="Union_eje_cen_iz_link"/>
+    </joint>
+    <link name="Base_link">
+      <collision name="Base_collision">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <geometry>
+          <box size="1.10000 1.50000 1.00000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="27.08333" ixy="0.00000" ixz="0.00000" iyy="18.41667" iyz="0.00000" izz="28.83333"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <mass value="100.00000"/>
+      </inertial>
+      <visual name="Base">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <material name="material"/>
+        <geometry>
+          <box size="1.10000 1.50000 1.00000"/>
+        </geometry>
+      </visual>
+    </link>
+    <link name="Eje_cen_der_link">
+      <collision name="Eje_cen_der_collision">
+        <origin rpy="0.00000 -0.00000 0.00000" xyz="-0.00000 -0.00000 -0.00000"/>
+        <geometry>
+          <box size="0.20000 0.20000 0.70000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="0.01900" ixy="0.00000" ixz="0.01762" iyy="0.04417" iyz="0.00000" izz="0.03183"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="-0.00000 -0.00000 -0.00000"/>
+        <mass value="1.00000"/>
+      </inertial>
+      <visual name="Eje_cen_der">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+        <material name="dark_blue"/>
+        <geometry>
+          <box size="0.20000 0.20000 0.70000"/>
+        </geometry>
+      </visual>
+    </link>
+    <link name="Eje_cen_iz_link">
+      <collision name="Eje_cen_iz_collision">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+        <geometry>
+          <box size="0.20000 0.20000 0.70000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="0.01900" ixy="0.00000" ixz="-0.01762" iyy="0.04417" iyz="0.00000" izz="0.03183"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 -0.00000"/>
+        <mass value="1.00000"/>
+      </inertial>
+      <visual name="Eje_cen_iz">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+        <material name="dark_blue"/>
+        <geometry>
+          <box size="0.20000 0.20000 0.70000"/>
+        </geometry>
+      </visual>
+    </link>
+    <link name="Eje_del_der_link">
+      <collision name="Eje_del_der_collision">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+        <geometry>
+          <box size="0.20000 0.20000 1.00000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="0.08667" ixy="0.00000" ixz="0.00000" iyy="0.03299" iyz="0.03759" izz="0.06035"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+        <mass value="1.00000"/>
+      </inertial>
+      <visual name="Eje_del_der">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+        <material name="dark_blue"/>
+        <geometry>
+          <box size="0.20000 0.20000 1.00000"/>
+        </geometry>
+      </visual>
+    </link>
+    <link name="Eje_del_iz_link">
+      <collision name="Eje_del_iz_collision">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+        <geometry>
+          <box size="0.20000 0.20000 1.00000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="0.08667" ixy="0.00000" ixz="0.00000" iyy="0.03299" iyz="0.03759" izz="0.06035"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+        <mass value="1.00000"/>
+      </inertial>
+      <visual name="Eje_del_iz">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 -0.00000 0.00000"/>
+        <material name="dark_blue"/>
+        <geometry>
+          <box size="0.20000 0.20000 1.00000"/>
+        </geometry>
+      </visual>
+    </link>
+    <link name="Eje_tra_iz_link">
+      <collision name="Eje_tra_iz_collision">
+        <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+        <geometry>
+          <box size="0.20000 0.20000 1.00000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="0.08667" ixy="0.00000" ixz="0.00000" iyy="0.03299" iyz="-0.03759" izz="0.06035"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+        <mass value="1.00000"/>
+      </inertial>
+      <visual name="Eje_tra_iz">
+        <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+        <material name="dark_blue"/>
+        <geometry>
+          <box size="0.20000 0.20000 1.00000"/>
+        </geometry>
+      </visual>
+    </link>
+    <link name="Eje_tras_der_link">
+      <collision name="Eje_tras_der_collision">
+        <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+        <geometry>
+          <box size="0.20000 0.20000 1.00000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="0.08667" ixy="0.00000" ixz="0.00000" iyy="0.03299" iyz="-0.03759" izz="0.06035"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+        <mass value="1.00000"/>
+      </inertial>
+      <visual name="Eje_tras_der">
+        <origin rpy="-0.00000 0.00000 0.00000" xyz="0.00000 0.00000 -0.00000"/>
+        <material name="dark_blue"/>
+        <geometry>
+          <box size="0.20000 0.20000 1.00000"/>
+        </geometry>
+      </visual>
+    </link>
+    <link name="Pared_der_link">
+      <collision name="Pared_der_collision">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <geometry>
+          <box size="0.10000 1.10000 0.90000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="1.68333" ixy="0.00000" ixz="0.00000" iyy="0.68333" iyz="0.00000" izz="1.01667"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <mass value="10.00000"/>
+      </inertial>
+      <visual name="Pared_der">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <material name="material"/>
+        <geometry>
+          <box size="0.10000 1.10000 0.90000"/>
+        </geometry>
+      </visual>
+    </link>
+    <link name="Pared_inf_link">
+      <collision name="Pared_inf_collision">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <geometry>
+          <box size="1.10000 1.10000 0.10000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="1.01667" ixy="0.00000" ixz="0.00000" iyy="1.01667" iyz="0.00000" izz="2.01667"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <mass value="10.00000"/>
+      </inertial>
+      <visual name="Pared_inf">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <material name="material"/>
+        <geometry>
+          <box size="1.10000 1.10000 0.10000"/>
+        </geometry>
+      </visual>
+    </link>
+    <link name="Pared_iz_link">
+      <collision name="Pared_iz_collision">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <geometry>
+          <box size="0.10000 1.10000 0.90000"/>
+        </geometry>
+      </collision>
+      <visual name="Pared_iz">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <material name="material"/>
+        <geometry>
+          <box size="0.10000 1.10000 0.90000"/>
+        </geometry>
+      </visual>
+    </link>
+    <link name="Pared_tras_link">
+      <collision name="Pared_tras_collision">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <geometry>
+          <box size="1.00000 0.10000 0.90000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="0.68333" ixy="0.00000" ixz="0.00000" iyy="1.50833" iyz="0.00000" izz="0.84167"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <mass value="10.00000"/>
+      </inertial>
+      <visual name="Pared_tras">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <material name="material"/>
+        <geometry>
+          <box size="1.00000 0.10000 0.90000"/>
+        </geometry>
+      </visual>
+    </link>
+    <link name="Union_eje_cen_der_link">
+      <collision name="Union_eje_cen_der_collision">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <geometry>
+          <box size="0.30000 0.30000 0.30000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="0.01500" ixy="0.00000" ixz="0.00000" iyy="0.01500" iyz="0.00000" izz="0.01500"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <mass value="1.00000"/>
+      </inertial>
+      <visual name="Union_eje_cen_der">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <material name="dark_blue"/>
+        <geometry>
+          <box size="0.30000 0.30000 0.30000"/>
+        </geometry>
+      </visual>
+    </link>
+    <link name="Union_eje_cen_iz_link">
+      <collision name="Union_eje_cen_iz_collision">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <geometry>
+          <box size="0.30000 0.30000 0.30000"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <inertia ixx="0.01500" ixy="0.00000" ixz="0.00000" iyy="0.01500" iyz="0.00000" izz="0.01500"/>
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <mass value="1.00000"/>
+      </inertial>
+      <visual name="Union_eje_cen_iz">
+        <origin rpy="0.00000 0.00000 0.00000" xyz="0.00000 0.00000 0.00000"/>
+        <material name="dark_blue"/>
+        <geometry>
+          <box size="0.30000 0.30000 0.30000"/>
+        </geometry>
+      </visual>
+    </link>
+    
+
+    <material name="material">
+      <color rgba="0.39216 0.39216 0.39216 1.00000"/>
+    </material>
+    <material name="dark_blue">
+      <color rgba="0.22745 0.23137 0.37647 1.00000"/>
+    </material>
+  </xacro:macro>
+  
+
+</robot>
