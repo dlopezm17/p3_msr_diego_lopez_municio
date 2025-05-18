@@ -53,9 +53,9 @@
         <joint name="Union_eje_L2_link_joint" value="0"/>
     </group_state>
     <group_state name="release" group="scara">
-        <joint name="Base_pinza_link_joint" value="0"/>
+        <joint name="Base_pinza_link_joint" value="-0.0868"/>
         <joint name="Brazo_L3_link_joint" value="1.7"/>
-        <joint name="Union_base_L1_link_joint" value="2.1961"/>
+        <joint name="Union_base_L1_link_joint" value="2.1133"/>
         <joint name="Union_eje_L2_link_joint" value="2.5"/>
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
@@ -93,7 +93,8 @@
     <disable_collisions link1="Base_pinza_link" link2="Brazo_base_link" reason="Never"/>
     <disable_collisions link1="Base_pinza_link" link2="Dedo_der_link" reason="Adjacent"/>
     <disable_collisions link1="Base_pinza_link" link2="Dedo_iz_link" reason="Adjacent"/>
-    <disable_collisions link1="Base_pinza_link" link2="Eje_cen_der_link" reason="Never"/>
+    <disable_collisions link1="Base_pinza_link" link2="Eje_cen_iz_link" reason="Never"/>
+    <disable_collisions link1="Base_pinza_link" link2="Rueda_cen_iz_link" reason="Never"/>
     <disable_collisions link1="Base_pinza_link" link2="Union_L1_L2_link" reason="Never"/>
     <disable_collisions link1="Base_pinza_link" link2="Union_L1_eje_link" reason="Never"/>
     <disable_collisions link1="Base_pinza_link" link2="Union_L2_L3_link" reason="Never"/>
@@ -200,12 +201,13 @@
     <disable_collisions link1="Brazo_base_link" link2="Union_eje_cen_der_link" reason="Never"/>
     <disable_collisions link1="Brazo_base_link" link2="Union_eje_cen_iz_link" reason="Never"/>
     <disable_collisions link1="Dedo_der_link" link2="Dedo_iz_link" reason="Never"/>
+    <disable_collisions link1="Dedo_der_link" link2="Eje_cen_iz_link" reason="Never"/>
     <disable_collisions link1="Dedo_der_link" link2="Union_L1_L2_link" reason="Never"/>
     <disable_collisions link1="Dedo_der_link" link2="Union_L1_eje_link" reason="Never"/>
     <disable_collisions link1="Dedo_der_link" link2="Union_L2_L3_link" reason="Never"/>
     <disable_collisions link1="Dedo_der_link" link2="Union_base_L1_link" reason="Never"/>
     <disable_collisions link1="Dedo_der_link" link2="Union_eje_L2_link" reason="Never"/>
-    <disable_collisions link1="Dedo_iz_link" link2="Eje_cen_der_link" reason="Never"/>
+    <disable_collisions link1="Dedo_der_link" link2="Union_eje_cen_iz_link" reason="Never"/>
     <disable_collisions link1="Dedo_iz_link" link2="Union_L1_L2_link" reason="Never"/>
     <disable_collisions link1="Dedo_iz_link" link2="Union_L1_eje_link" reason="Never"/>
     <disable_collisions link1="Dedo_iz_link" link2="Union_L2_L3_link" reason="Never"/>

@@ -54,7 +54,6 @@ rover_base_control:
       - position
       - velocity
     allow_nonzero_velocity_at_trajectory_end: true
-  
 /**/gripper_controller:
   ros__parameters:
     joints:

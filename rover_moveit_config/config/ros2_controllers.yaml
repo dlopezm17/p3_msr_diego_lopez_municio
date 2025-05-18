@@ -14,7 +14,7 @@ controller_manager:
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
-/**/scara_controller:
+scara_controller:
   ros__parameters:
     joints:
       - Union_base_L1_link_joint
@@ -27,7 +27,7 @@ controller_manager:
       - position
       - velocity
     allow_nonzero_velocity_at_trajectory_end: true
-/**/gripper_controller:
+gripper_controller:
   ros__parameters:
     joints:
       - Dedo_der_link_joint

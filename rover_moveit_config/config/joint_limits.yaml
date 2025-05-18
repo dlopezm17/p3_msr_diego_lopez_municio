@@ -10,31 +10,25 @@ default_acceleration_scaling_factor: 0.1
 joint_limits:
   Base_pinza_link_joint:
     has_velocity_limits: true
-    max_velocity: 10.0
     has_acceleration_limits: true
     max_acceleration: 10.0
   Brazo_L3_link_joint:
     has_velocity_limits: true
-    max_velocity: 10.0
     has_acceleration_limits: true
     max_acceleration: 10.0
   Dedo_der_link_joint:
     has_velocity_limits: true
-    max_velocity: 10.0
     has_acceleration_limits: true
     max_acceleration: 10.0
   Dedo_iz_link_joint:
     has_velocity_limits: true
-    max_velocity: 10.0
     has_acceleration_limits: true
     max_acceleration: 10.0
   Union_base_L1_link_joint:
     has_velocity_limits: true
-    max_velocity: 10.0
     has_acceleration_limits: true
     max_acceleration: 10.0
   Union_eje_L2_link_joint:
     has_velocity_limits: true
-    max_velocity: 10.0
     has_acceleration_limits: true
     max_acceleration: 10.0

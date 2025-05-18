@@ -3,21 +3,21 @@
 
   <xacro:macro name="gripper" params="parent">
     <joint name="Base_pinza_link_joint" type="continuous">
-      <limit effort="50.0" velocity="1.5"/>
+      <limit effort="100.0" velocity="100"/>
       <origin rpy="3.1416 0.00000 -1.57080" xyz="0.00000 0.00000 -1.00000"/>
       <parent link="${parent}"/>
       <child link="Base_pinza_link"/>
       <axis xyz="0.00000 0.00000 1.00000"/>
     </joint>
     <joint name="Dedo_der_link_joint" type="prismatic">
-      <limit lower="0.00000" upper="0.45000" effort="50.0" velocity="1.5"/>
+      <limit lower="0.00000" upper="0.45000" effort="100" velocity="100.0"/>
       <origin rpy="0.00000 0.00000 3.1416" xyz="0.57500 0.00000 0.17500"/>
       <parent link="Base_pinza_link"/>
       <child link="Dedo_der_link"/>
       <axis xyz="1.00000 0.00000 0.00000"/>
     </joint>
     <joint name="Dedo_iz_link_joint" type="prismatic">
-      <limit lower="0.00000" upper="0.45000" effort="50.0" velocity="1.5"/>
+      <limit lower="0.00000" upper="0.45000" effort="100" velocity="100.0"/>
       <origin rpy="0.00000 0.00000 0.00000" xyz="-0.57500 0.00000 0.17500"/>
       <parent link="Base_pinza_link"/>
       <child link="Dedo_iz_link"/>

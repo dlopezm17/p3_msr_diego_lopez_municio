@@ -13,7 +13,7 @@
       <child link="Brazo_L2_link"/>
     </joint>
     <joint name="Brazo_L3_link_joint" type="prismatic">
-      <limit lower="0.00000" upper="1.70000" effort="50.0" velocity="1.5"/>
+      <limit lower="0.00000" upper="1.70000" effort="100" velocity="100.0"/>
       <origin rpy="0.00000 0.00000 1.57080" xyz="0.00000 0.00000 -1.00000"/>
       <parent link="Union_L2_L3_link"/>
       <child link="Brazo_L3_link"/>
@@ -40,14 +40,14 @@
       <child link="Union_L2_L3_link"/>
     </joint>
     <joint name="Union_base_L1_link_joint" type="revolute">
-      <limit lower="-2.50000" upper="2.50000" effort="50.0" velocity="1.5"/>
+      <limit lower="-2.50000" upper="2.50000" effort="100" velocity="100.0"/>
       <origin rpy="0.00000 0.00000 1.57080" xyz="0.00000 0.00000 1.00000"/>
       <parent link="Brazo_base_link"/>
       <child link="Union_base_L1_link"/>
       <axis xyz="0.00000 0.00000 1.00000"/>
     </joint>
     <joint name="Union_eje_L2_link_joint" type="revolute">
-      <limit lower="-2.50000" upper="2.50000" effort="50.0" velocity="1.5"/>
+      <limit lower="-2.50000" upper="2.50000" effort="100" velocity="100.0"/>
       <origin rpy="0.00000 0.00000 1.57080" xyz="0.00000 0.00000 -0.25000"/>
       <parent link="Union_L1_L2_link"/>
       <child link="Union_eje_L2_link"/>

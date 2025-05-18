@@ -7,7 +7,7 @@ moveit_setup_assistant_config:
   package_settings:
     author_name: Diego López Municio
     author_email: d.lopezm.2022@alumnos.urjc.es
-    generated_timestamp: 1747412405
+    generated_timestamp: 1747595085
   control_xacro:
     command:
       - position
