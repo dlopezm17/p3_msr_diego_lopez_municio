@@ -18,25 +18,15 @@ Imagen de las `tf` del robot:
 ### Posición de las ruedas
 Se puede ver que las ruedas derechas primero están en reposo. Tras esto empiezan a rotar en sentido negativo, con pequeños momentos de pausa dado que estaba colocando el robot y no quería pasarme demasiado. Al final se observa que retrocede un poco dado que había dejado el cubo algo atrás.
 
-**Rueda delantera derecha**  
-![Rueda delantera derecha](data/plot_del_der.png)
-
-**Rueda central derecha**  
-![Rueda central derecha](data/plot_cen_der.png)
-
-**Rueda trasera derecha**  
-![Rueda trasera derecha](data/plot_tras_der.png)
+| **Rueda delantera derecha** |  **Rueda central derecha** | **Rueda trasera derecha** |
+| :---: | :---: | :---: |
+| ![Rueda delantera derecha](data/plot_del_der.png) | ![Rueda central derecha](data/plot_cen_der.png) | ![Rueda trasera derecha](data/plot_tras_der.png) |
 
 Las ruedas izquierdas siguen el mismo patrón, pero dado que su eje Z apunta en la dirección opuesta, al moverse el signo está invertido con respecto a las ruedas derechas.
 
-**Rueda delantera izquierda**  
-![Rueda delantera izquierda](data/plot_del_iz.png)
-
-**Rueda central izquierda**  
-![Rueda central izquierda](data/plot_cen_iz.png)
-
-**Rueda trasera izquierda**  
-![Rueda trasera izquierda](data/plot_tras_iz.png)
+| **Rueda delantera izquierda**  |  **Rueda central izquierda**   | **Rueda trasera izquierda**  |
+| :---: | :---: | :---: |
+| ![Rueda delantera izquierda](data/plot_del_iz.png) | ![Rueda central izquierda](data/plot_cen_iz.png) | ![Rueda trasera izquierda](data/plot_tras_iz.png) |
 
 ### Aceleración de las ruedas
 
